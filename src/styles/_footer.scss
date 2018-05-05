@@ -1,0 +1,50 @@
+.ui.footer {
+  padding-top: 6%;
+  padding-bottom: 12%;
+  .column {
+    text-align: center;
+  }
+  .header {
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .list {
+    .item {
+      padding-right: 3px;
+      margin-bottom: 8px;
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .header {
+      text-align: left;
+    }
+    .list {
+      .item {
+        text-align: left;
+      }
+    }
+    .content {
+      padding-bottom: 24px;
+    }
+  }
+}
+
+.ui.accordion {
+  .header {
+    cursor: pointer;
+  }
+  .content {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .block {
+    border-bottom: 1px solid #ededed;
+  }
+}

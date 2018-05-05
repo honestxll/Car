@@ -1,0 +1,27 @@
+body {
+  background: $page-backgroud;
+  font-family: $font;
+}
+
+.slick-slide {
+  outline: none;
+}
+
+.ui.button {
+  border-radius: 0!important;
+}
+
+.image {
+  outline: none;
+}
+
+/**
+ * hidden content
+ */
+.ui.cards,
+.ui.carousel,
+.ui.hero,
+.ui.story,
+.ui.spec {
+  // display: none!important;
+}

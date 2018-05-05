@@ -1,0 +1,8 @@
+require('../semantic/dist/semantic.min.css')
+require('../semantic/dist/semantic.min.js')
+require('material-design-icons/iconfont/material-icons.css')
+require('slick-carousel/slick/slick-theme.css')
+require('slick-carousel/slick/slick.css')
+require('./styles/index.scss')
+require('slick-carousel')
+require('./scripts/main.js')

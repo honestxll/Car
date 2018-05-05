@@ -1,0 +1,34 @@
+body.pushable>.pusher {
+  background: #f8f8f8;
+}
+
+.ui.sidebar {
+  background: #fff;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    .item {
+      padding: 16px;
+      padding-right: 24px;
+      font-size: 18px;
+      color: #000;
+      &.active {
+        background: #f8f8f8;
+      }
+      &:hover {
+        background: #fbfbfb;
+      }
+    }
+  }
+
+  .close-icon {
+    height: 50px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+}

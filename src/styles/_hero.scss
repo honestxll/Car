@@ -1,0 +1,141 @@
+.ui.hero {
+  background: #f0f0f0;
+
+  .item {
+    position: relative;
+    overflow: hidden;
+
+    .content {
+      display: flex;
+      align-items: center;
+      height: 80vh;
+      max-height: 750px;
+      min-height: 350px;
+
+      .container {
+        z-index: 1;
+      }
+
+      .header {
+        font-size: 48px;
+        margin: 0 0 16px;
+      }
+
+      .sub.header {
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      .description {
+        font-size: 18px;
+        margin-bottom: 32px;
+        font-weight: 600;
+      }
+
+      .action {
+        margin-bottom: 32px;
+      }
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  .white {
+    color: #fff;
+  }
+  .big {
+    .header {
+      font-size: 56px;
+      letter-spacing: 8px;
+    }
+    .sub.header {
+      font-size: 24px;
+      letter-spacing: 16px;
+      font-family: "PingFangSC-Ultralight";
+    }
+  }
+  .bottom {
+    .content {
+      align-items: flex-end;
+      padding-bottom: 4%;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .item {
+      display: flex!important;
+      flex-direction: column-reverse;
+
+      .image {
+        position: inherit;
+        order: 2;
+        height: auto;
+      }
+
+      .content {
+        order: 1;
+        height: auto;
+        justify-content: center;
+        color: #000;
+        align-items: center;
+
+        .header {
+          font-size: 36px;
+        }
+
+        .container {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.ui.carousel {
+  .next.button,
+  .prev.button {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%!important;
+    text-align: center;
+    background: rgba(255, 255, 255, .4);
+    color: rgba(0, 0, 0, .4);
+  }
+
+  .next.button:hover,
+  .prev.button:hover {
+    background: rgba(255, 255, 255, .2);
+    color: rgba(0, 0, 0, .2);
+  }
+
+  .next.bottom.button,
+  .prev.bottom.button {
+    margin-bottom: 24px;
+  }
+
+  .prev.button {
+    left: 24px;
+  }
+
+  .next.button {
+    right: 24px;
+  }
+
+  .slick-dots {
+    bottom: 32px;
+  }
+}
