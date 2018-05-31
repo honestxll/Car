@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
-const debug = true
+const debug = false
 
 module.exports = {
   mode: 'development',
@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
-        loader: 'url-loader?limit=8192&outputPath=images/',
+        loader: 'url-loader?limit=8192&outputPath=images/!image-webpack-loader',
       },
       {
         test: /\.html$/,
