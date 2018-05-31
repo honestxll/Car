@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const debug = true
 
 module.exports = {
@@ -18,36 +19,54 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       },
       {
         test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
-        use: 'file-loader',
+        loader: 'file-loader?outputPath=fonts/',
+      },
+      {
+        test: /\.(mp4|3gp|avi|flv)$/,
+        loader: 'url-loader?limit=8192&outputPath=video/',
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
-        use: 'url-loader',
+        loader: 'url-loader?limit=8192&outputPath=images/',
+      },
+      {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: ['img:src', 'video:poster', 'source:src']
+          }
+        }
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
       template: './index.html',
       title: 'My Webpack App',
       minify: debug ? false : {
         collapseWhitespace: true
       },
-      inject: true,
-      hash: false
     }),
     new HtmlWebpackPlugin({
       filename: 'product.html',
-      template: './product.html'
+      template: './product.html',
+      title: 'My Webpack App Product',
+      minify: debug ? false : {
+        collapseWhitespace: true
+      },
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    })
+    }),
+    new ExtractTextPlugin("styles/styles.css"),
   ]
 }
