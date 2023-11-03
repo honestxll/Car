@@ -1,7 +1,8 @@
+import enquire from 'enquire.js'
+import ScrollReveal from 'scrollreveal'
+
 (function(){
   'use strict';
-  const enquire = require('enquire.js')
-  const ScrollReveal = require('scrollreveal')
 
   /**
    * navbar
